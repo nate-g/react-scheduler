@@ -53,7 +53,13 @@ export type Config = {
   theme?: Theme;
   dateFormat?: string;
   timeFormat?: string;
+  customTooltip?: CustomTooltipFunction;
 };
+
+export type CustomTooltipFunction = (
+  tooltipData: TooltipData,
+  project?: SchedulerProjectData
+) => JSX.Element;
 
 export type Theme = {
   light?: Partial<Record<ColorType, string>>;
@@ -194,4 +200,5 @@ export type TooltipData = {
   coords: Coords;
   resourceIndex: number;
   disposition: OccupancyData;
+  project?: SchedulerProjectData;
 };
