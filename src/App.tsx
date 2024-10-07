@@ -70,7 +70,7 @@ function App() {
             zoom: 0,
             maxRecordsPerPage: maxRecordsPerPage,
             showThemeToggle: true,
-            customTooltip: (_, project) => (
+            customTooltip: ({ project }) => (
               <div>
                 {project?.title} | {project?.subtitle}
               </div>
