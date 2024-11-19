@@ -34,7 +34,8 @@ const Tile: FC<TileProps> = ({ row, data, zoom, onTileClick }) => {
         top: `${y}px`,
         backgroundColor: `${data.bgColor ?? colors.defaultTile}`,
         width: `${width}px`,
-        color: getTileTextColor(data.bgColor ?? "")
+        color: getTileTextColor(data.bgColor ?? ""),
+        ...(data.customStyle ?? {})
       }}
       onClick={() => onTileClick?.(data)}>
       <StyledTextWrapper>
